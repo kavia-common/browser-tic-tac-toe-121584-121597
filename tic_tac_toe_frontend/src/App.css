@@ -222,6 +222,126 @@ body {
   background: rgba(255, 64, 129, 0.06);
 }
 
+/* Stats */
+.stats {
+  margin-top: 6px;
+}
+.stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.stat-card {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: var(--shadow);
+}
+.stat-card.x { border-left: 4px solid var(--color-primary); }
+.stat-card.o { border-left: 4px solid var(--color-accent); }
+.stat-label {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.stat-values {
+  display: flex;
+  gap: 8px;
+}
+.stat-pill {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: #fafafa;
+}
+
+/* Overlay for names */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  z-index: 50;
+}
+.overlay-card {
+  width: min(92vw, 520px);
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+.overlay-title {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+.overlay-subtitle {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.input-group {
+  display: grid;
+  gap: 6px;
+}
+.input-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.input {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+.overlay-footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.supabase-hint {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: #fafafa;
+}
+.supabase-hint.ok {
+  color: #1167c4;
+  border-color: rgba(17, 103, 196, 0.25);
+  background: rgba(17, 103, 196, 0.06);
+}
+.supabase-hint.warn {
+  color: #8a1040;
+  border-color: rgba(255, 64, 129, 0.25);
+  background: rgba(255, 64, 129, 0.06);
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(25, 118, 210, 0.25);
+}
+
 /* Responsive tweaks */
 @media (max-width: 480px) {
   .game-card {

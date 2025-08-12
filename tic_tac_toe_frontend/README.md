@@ -4,10 +4,41 @@ This project provides a minimal React template with a clean, modern UI and minim
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Lightweight: No heavy UI frameworks - uses only vanilla CSS and React
+- Modern UI: Clean, responsive design with KAVIA brand styling
+- Fast: Minimal dependencies for quick loading times
+- Simple: Easy to understand and modify
+
+## Tic Tac Toe Enhancements
+
+This template includes a playable Tic Tac Toe game with the following enhancements:
+- Player name prompt: Users must enter Player X and Player O names before playing.
+- Supabase integration: Reads credentials from environment variables and persists player stats (wins, draws).
+- Live stats: After each game result, the app updates Supabase and fetches fresh stats to display.
+
+### Environment Variables
+
+Set these variables in a `.env` file for Create React App:
+
+```
+REACT_APP_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+REACT_APP_SUPABASE_KEY=YOUR_ANON_PUBLIC_KEY
+```
+
+See `assets/supabase.md` for database schema and further details.
+
+### Supabase Table
+
+Create a `player_stats` table:
+
+```sql
+create table if not exists public.player_stats (
+  name text primary key,
+  wins bigint not null default 0,
+  draws bigint not null default 0,
+  updated_at timestamptz not null default now()
+);
+```
 
 ## Getting Started
 
@@ -35,11 +66,10 @@ The main brand colors are defined as CSS variables in `src/App.css`:
 
 ```css
 :root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
+  --color-primary: #1976d2;
+  --color-secondary: #e0e0e0;
+  --color-accent: #ff4081;
+  --bg: #f7f9fc;
 }
 ```
 
